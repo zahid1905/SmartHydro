@@ -3,4 +3,4 @@ def checar_codificar(id_sensor, sensor, actuador)
     if sensor < 512:
         regar(actuador)
     elif sensor > 512:
-        pint("plantas humedas")
+        pint("plantas humeda")
