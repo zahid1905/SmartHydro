@@ -1,0 +1,6 @@
+# Ignorar volumes
+volumes
+
+data
+
+.vscode

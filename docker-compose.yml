@@ -1,0 +1,76 @@
+version: '3.1'
+services:
+  db:
+    container_name: mariadb
+    image: mariadb:latest
+    environment:
+      - MARIADB_ROOT_PASSWORD=contrasena
+    ports:
+      - 3306:3306
+    volumes:
+      - ./volumes/mariadb-data:/var/lib/mysql
+    networks:
+      backend:
+        ipv4_address: 172.19.0.2
+  
+  mqtt:
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./volumes/mosquitto-config:/mosquitto/config
+      - ./volumes/mosquitto-data:/mosquitto/data
+      - ./volumes/mosquitto-log:/mosquitto/log
+    networks:
+      backend:
+        ipv4_address: 172.19.0.3
+  
+  mqttdbconnector:
+    image: mqttdb
+    build:
+      context: .
+      dockerfile: ./mqtt_db_connector/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+      mqtt:
+        condition: service_started
+    networks:
+      backend:
+        ipv4_address: 172.19.0.4
+  
+  dbmqttconnector:
+    image: dbmqtt
+    build:
+      context: .
+      dockerfile: ./db_mqtt_connector/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+      mqtt:
+        condition: service_started
+      mqttdbconnector:
+        condition: service_started
+    networks:
+      backend:
+        ipv4_address: 172.19.0.5
+  
+  webpage:
+    image: web
+    build:
+      context: .
+      dockerfile: ./webpage/Dockerfile
+    ports:
+      - 8080:80
+    networks:
+      backend:
+        ipv4_address: 172.19.0.6
+
+networks:
+  backend:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.19.0.0/16"

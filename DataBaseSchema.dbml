@@ -1,0 +1,51 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+
+
+Table users {
+  user_id integer [pk, not null, unique, increment]
+  username varchar
+  email varchar
+  usr_password password
+  usr_role varchar
+  subscription varchar
+  created_at timestamp
+}
+
+Table devices {
+  device_id integer [pk, not null, unique, increment]
+  user_id integer
+  device_name varchar
+}
+
+Table sensors {
+  sensor_id integer [pk, not null, unique, increment]
+  device_id integer
+  sensor_name varchar
+}
+
+Table actuators {
+  id integer [pk, not null, unique, increment]
+  device_id integer
+  actuator_name varchar
+  actuator_state varchar
+}
+
+Table sensor_data {
+  sensor_id integer
+  sampling_time timestamp
+  sensor_value float
+
+  indexes {
+    (sensor_id,sampling_time) [pk]
+  }
+}
+
+Ref: devices.user_id > users.id
+
+Ref: sensors.device_id > devices.id
+
+Ref: actuators.device_id > devices.id
+
+Ref: sensor_data.sensor_id > sensors.id

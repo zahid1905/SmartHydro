@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Registro</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar text-bg-primary navbar-expand-lg bg-black" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo.svg" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
+                SmartHydro Lab
+              </a>
+              <button class="navbar-toggler " style="color: black" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-grid gap-3 d-lg-block justify-content-center d-xl-flex justify-content-xl-end ms-auto">
+                  <button class="btn btn-outline-success text-light border-0" style="width: 120px" type="button" onclick="window.location.href='../index.html'">Inicio</button>
+                  <button class="btn btn-outline-success text-light border-0 active" style="width: 120px" type="button" onclick="window.location.href='./planes.html'">Regístrate</button>
+                  <button class="btn btn-outline-success text-light border-0" style="width: 120px" type="button" onclick="window.location.href='./login.html'">Iniciar sesión</button>
+                  <button class="btn btn-outline-success text-light border-0" style="width: 120px" type="button" onclick="window.location.href='./acerca_de.html'">Acerca de</button>
+                </div>
+              </div>
+            </div>
+          </nav> 
+    </header>
+    <main>
+        <div class="container">
+          <div class="position-relative" style="height: 6rem;">
+            <div class="card top-50 p-3 p-lg-5 m-3 rounded-3 border-0 shadow-lg">
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="ejemplo@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Confirmar contraseña</label>
+                  <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-6">
+                  <label for="inputAddress" class="form-label">No. Teléfono</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="442-563-1550">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Dirección</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="calle 5, interior 4, centro">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">Ciudad</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="Santiago de Querétaro">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">Estado</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Aguascalientes</option>
+                    <option>Baja California</option>
+                    <option>Baja California Sur</option>
+                    <option>Campeche</option>
+                    <option>Chiapas</option>
+                    <option>Ciudad de México</option>
+                    <option>Coahuila de Zaragoza</option>
+                    <option>Colima</option>
+                    <option>Durango</option>
+                    <option>Guanajuato</option>
+                    <option>Guerrero</option>
+                    <option>Hiadalgo</option>
+                    <option>Jalisco</option>
+                    <option>Estado de México</option>
+                    <option>Michoacán de Ocampo</option>
+                    <option>Morelos</option>
+                    <option>Nayarit</option>
+                    <option>Nuevo León</option>
+                    <option>Oaxaca</option>
+                    <option>Puebla</option>
+                    <option>Querétaro</option>
+                    <option>Quintana Roo</option>
+                    <option>San Luis Potosí</option>
+                    <option>Sinaloa</option>
+                    <option>Sonora</option>
+                    <option>Tabasco</option>
+                    <option>Tamaulipas</option>
+                    <option>Tlaxcala</option>
+                    <option>Veracruz</option>
+                    <option>Yucatan</option>
+                    <option>Zacatecas</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">Código postal</label>
+                  <input type="text" class="form-control" id="inputZip" placeholder="76000">
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Ver contraseña
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="intputPlan" class="form-label">Plan</label>
+                  <select id="inputPlan" class="form-select">
+                    <option selected>Light</option>
+                    <option>Standar</option>
+                    <option>Premium</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+              </form>
+            </div>
+          </div>   
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</body>
+</html>
