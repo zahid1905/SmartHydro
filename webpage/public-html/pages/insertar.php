@@ -1,5 +1,5 @@
 <?php 
-	$conexion=mysqli_connect('172.19.0.2','root','contrasena','SmartHydro','3306');
+	$conexion=mysqli_connect('192.168.54.115','root','contrasena','SmartHydro');
 
 	$actuator_id=$_POST['actuator_id'];
 	$device_id=$_POST['device_id'];
